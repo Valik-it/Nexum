@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Nexum</string>
+    <string name="first_field">123...</string>
+    <string name="second_field">123...</string>
+    <string name="button">Посчитать</string>
+    <string name="next_btn">Перейти</string>
+    <string name="btn_clear">X</string>
+</resources>
