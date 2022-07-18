@@ -48,10 +48,12 @@ class MainActivity : AppCompatActivity() {
 
 
         button?.setOnClickListener {
-            if(first_field?.text?.toString()?.trim()?.equals("")!!){
-                Toast.makeText(this, "Введите 1 число", Toast.LENGTH_LONG).show()
+            if(second_field?.text?.toString()?.trim()?.equals("")!!){
+                Toast.makeText(this, "67", Toast.LENGTH_SHORT).show()
             }
         }
+
+
 
     }
 }
