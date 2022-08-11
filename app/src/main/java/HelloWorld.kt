@@ -8,7 +8,7 @@ fun main() {
    print("Введите второе число: ")
     val second : Int = readNumber()
 
-    println("Введите операцию: +, -, *, /")
+    println("Введите действие: +, -, *, /")
     val sum : Int = first + second
 
    println("Ответ: $sum ")
@@ -24,14 +24,16 @@ fun readNumber() :Int{
 }
 
 
-enum class Action{
-        PLUS(+),
-        MINUS(-),
-        DIVIDE(/),
-        MULTIPLY(*)
 
 
+
+enum class Action(val symbol : String){
+    PLUS("+"),
+    MINUS("-"),
+    MULTIPLY("*"),
+    DIVIDE("/");
 }
+
 
 
 
