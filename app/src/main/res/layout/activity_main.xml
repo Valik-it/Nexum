@@ -11,8 +11,8 @@
         android:id="@+id/first_field"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="137dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="134dp"
         android:layout_marginEnd="96dp"
         android:layout_marginBottom="211dp"
         android:hint="123..."
@@ -26,14 +26,15 @@
         android:id="@+id/second_field"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="137dp"
-        android:layout_marginEnd="57dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="495dp"
         android:hint="123..."
-        app:layout_constraintBottom_toTopOf="@+id/next_btn"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/first_field"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button"
@@ -67,7 +68,7 @@
         android:text="Перейти"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/second_field" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_clear" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
