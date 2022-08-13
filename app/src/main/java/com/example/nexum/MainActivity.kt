@@ -49,10 +49,9 @@ class MainActivity : AppCompatActivity() {
 
         button?.setOnClickListener {
             if(second_field?.text?.toString()?.trim()?.equals("")!!){
-                Toast.makeText(this, "67", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "ничего не введенно", Toast.LENGTH_SHORT).show()
             }
         }
-
 
 
     }
