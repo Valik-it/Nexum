@@ -1,90 +1,57 @@
-import java.lang.Exception
-
 fun main() {
-
-    print("Введите первое число: ")
-    val first : Int = readNumber()
-
-    print("Введите второе число: ")
-    val second : Int = readNumber()
-
-    println("Введите действие: +, -, *, /")
-    val sum : Int = first + second
-
-   println("Ответ: $sum ")
+    val firstInput: Int = readNumber()
+    val secondInput: Int = readNumber()
+    val action = readAction()
+    calculate(firstInput, secondInput, action)
 }
 
-fun readNumber() :Int{
+fun calculate(
+    firstInput: Int,
+    secondInput: Int,
+    action: Action
+) {
+    val sum = when (action) {
+        Action.PLUS -> firstInput + secondInput
+        Action.MINUS -> firstInput - secondInput
+        Action.MULTIPLY -> firstInput * secondInput
+        Action.DIVIDE -> firstInput / secondInput
+    }
+    println("Ответ: $sum ")
+}
+
+fun readNumber(): Int {
+    println("Введите число: ")
     return try {
         readLine()!!.toInt()
-    }
-    catch (e:Exception){
+    } catch (e: Exception) {
+        println("Вы ввели некорректное число, поэтому оно будет ноль")
         0
     }
 }
 
-fun defineAct(){
-    val pls = Action.PLUS
-    val mns = Action.MINUS
-    val mlt = Action.MULTIPLY
-    val dvd = Action.DIVIDE
-
-    val first : Int = readNumber()
-    val second : Int = readNumber()
-    val quant : String? = readLine()
-
-
-    if (quant == "+"){
-        val sum : Int = first + second
-        println("Ответ: ${sum}")
-    }else if (quant == "-"){
-        val sum : Int = first - second
-        println("Ответ: ${sum}")
-    }else if (quant == "*"){
-        val sum : Int = first * second
-        println("Ответ: ${sum}")
-    }
-    else if (quant == "/"){
-        val sum : Int = first / second
-        println("Ответ: ${sum}")
-    }
-
+fun readAction(): Action {
+    var action: Action?
+    do {
+        println("Введите действие:${Action.availableActions}")
+        action = when (readLine()) {
+            Action.PLUS.symbol -> Action.PLUS
+            Action.MINUS.symbol -> Action.MINUS
+            Action.MULTIPLY.symbol -> Action.MULTIPLY
+            Action.DIVIDE.symbol -> Action.DIVIDE
+            else -> null
+        }
+    } while (action == null)
+    return action
 }
 
-enum class Action(val symbol : String){
+enum class Action(val symbol: String) {
     PLUS("+"),
     MINUS("-"),
     MULTIPLY("*"),
     DIVIDE("/");
+
+    companion object {
+        val availableActions: String
+            get() = values().joinToString(separator = ",") { it.symbol }
+    }
 }
-
-
-
-
-
-//if (val = pls){
-//sum = pls + mns
-//println("Ответ: ${sum}")
-//else if (val = mns){
-//sum = pls - mns
-//}
-
-
-//fun clock() {
-    //val hourOfDay = 69
-
-    //val timeOfDay = if (hourOfDay < 6) {
-        //"Раннее утро"
-    //} else if (hourOfDay < 12) {
-        //"Утро"
-    //} else if (hourOfDay < 17) {
-       // "После полудня"
-    //} else if (hourOfDay < 20) {
-        //"Вечер"
-    //} else if (hourOfDay < 24) {
-        //"Поздний вечер"
-    //} else {
-        //"НЕДЕЙСТВИТЕЛЬНЫЙ ЧАС!"
-    //}
-    //println(timeOfDay)
-//}
