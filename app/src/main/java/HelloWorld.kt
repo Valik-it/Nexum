@@ -1,90 +1,41 @@
-import java.lang.Exception
+@file:Suppress("UNUSED_VARIABLE", "NAME_SHADOWING")
 
 fun main() {
 
-    print("Введите первое число: ")
-    val first : Int = readNumber()
+    val animalList = mutableListOf(
+        "кит",
+        "кот",
+        "собака",
+        "дельфин",
+        "попугай",
+        "орёл",
+        "лиса",
+        "медведь",
+        "лев",
+        "тигр")
 
-    print("Введите второе число: ")
-    val second : Int = readNumber()
+    println("Какое животные вы бы хотели? Дикое, хищное, домашнее, умеет летать")
+    //println(animalList)
 
-    println("Введите действие: +, -, *, /")
-    val sum : Int = first + second
-
-   println("Ответ: $sum ")
-}
-
-fun readNumber() :Int{
-    return try {
-        readLine()!!.toInt()
-    }
-    catch (e:Exception){
-        0
-    }
-}
-
-fun defineAct(){
-    val pls = Action.PLUS
-    val mns = Action.MINUS
-    val mlt = Action.MULTIPLY
-    val dvd = Action.DIVIDE
-
-    val first : Int = readNumber()
-    val second : Int = readNumber()
-    val quant : String? = readLine()
+    val question: String? = "Дикие животные"
 
 
-    if (quant == "+"){
-        val sum : Int = first + second
-        println("Ответ: ${sum}")
-    }else if (quant == "-"){
-        val sum : Int = first - second
-        println("Ответ: ${sum}")
-    }else if (quant == "*"){
-        val sum : Int = first * second
-        println("Ответ: ${sum}")
-    }
-    else if (quant == "/"){
-        val sum : Int = first / second
-        println("Ответ: ${sum}")
+    if (question == "Дикие животные"){
+        print("Введите вопрос: ")
+        val question = readLine()
+        println("Дикие животные: кит, дельфин, орёл, лиса, медведь, лев, тигр")
+
+    }else if (question == "Домашние животные"){
+        println("Домашние животные: кот, собака, попугай")
+
+    }else if (question == "Хищники"){
+        println("Хищники: орёл, лиса, медведь, лев, тигр")
+
+    }else if (question == "Умеет летать"){
+        println("Умеют летать: орёл и попугай")
+
+    }else{
+        println("Ошибка вопроса")
     }
 
 }
-
-enum class Action(val symbol : String){
-    PLUS("+"),
-    MINUS("-"),
-    MULTIPLY("*"),
-    DIVIDE("/");
-}
-
-
-
-
-
-//if (val = pls){
-//sum = pls + mns
-//println("Ответ: ${sum}")
-//else if (val = mns){
-//sum = pls - mns
-//}
-
-
-//fun clock() {
-    //val hourOfDay = 69
-
-    //val timeOfDay = if (hourOfDay < 6) {
-        //"Раннее утро"
-    //} else if (hourOfDay < 12) {
-        //"Утро"
-    //} else if (hourOfDay < 17) {
-       // "После полудня"
-    //} else if (hourOfDay < 20) {
-        //"Вечер"
-    //} else if (hourOfDay < 24) {
-        //"Поздний вечер"
-    //} else {
-        //"НЕДЕЙСТВИТЕЛЬНЫЙ ЧАС!"
-    //}
-    //println(timeOfDay)
-//}
